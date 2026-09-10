@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" width="920" height="320" role="img" aria-label="WireGuard 데이터 경로. 10.66.0.0/24 터널 서브넷의 기기가 암호화된 UDP 51820 포트로 Oracle Cloud VM에 접속하면 OCI Security List와 iptables INPUT을 통과하고 wg0 인터페이스가 커널에서 복호화한다. 복호화된 패킷은 라우팅되므로 iptables FORWARD 체인과 NAT MASQUERADE를 거쳐야 인도 출구 IP로 나간다. FORWARD가 이 프로젝트에서 장애가 났던 지점이다.">
+  <defs>
+    <marker id="wgArrowKo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <rect x="210" y="40" width="470" height="240" rx="10" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="228" y="28" width="212" height="24" rx="12" fill="#4a5568"/>
+  <text x="334" y="44" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Oracle Cloud VM · ap-mumbai-1</text>
+
+  <rect x="10" y="92" width="140" height="80" rx="8" fill="#4a5568"/>
+  <text x="80" y="118" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="13" font-weight="600" fill="#ffffff">기기</text>
+  <text x="80" y="137" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#cbd5e0">10.66.0.3 · .4 · .5</text>
+  <text x="80" y="152" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#cbd5e0">터널 서브넷</text>
+
+  <line x1="152" y1="132" x2="226" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrowKo)"/>
+  <rect x="124" y="55" width="128" height="22" rx="11" fill="#4a5568"/>
+  <text x="188" y="70" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#ffffff">암호화 · UDP 51820</text>
+
+  <rect x="232" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="297" y="126" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">OCI Security List</text>
+  <text x="297" y="145" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#c3d0e8">클라우드 방화벽</text>
+
+  <line x1="364" y1="132" x2="378" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrowKo)"/>
+
+  <rect x="382" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="447" y="126" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">iptables INPUT</text>
+  <text x="447" y="145" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#c3d0e8">서버 방화벽</text>
+
+  <line x1="514" y1="132" x2="528" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrowKo)"/>
+
+  <rect x="532" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="597" y="126" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">wg0 복호화</text>
+  <text x="597" y="145" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#c3d0e8">커널 · 10.66.0.1</text>
+
+  <path d="M 597 166 L 597 182 L 447 182 L 447 196" fill="none" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrowKo)"/>
+  <text x="522" y="177" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="10" fill="#8b949e">종료가 아니라 라우팅됨</text>
+
+  <rect x="382" y="198" width="130" height="64" rx="8" fill="#8c3a3a"/>
+  <text x="447" y="224" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">iptables FORWARD</text>
+  <text x="447" y="243" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#f0c8c8">장애가 났던 지점</text>
+
+  <line x1="514" y1="230" x2="528" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrowKo)"/>
+
+  <rect x="532" y="198" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="597" y="224" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">NAT MASQUERADE</text>
+  <text x="597" y="243" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#c3d0e8">출발지 IP 변경</text>
+
+  <line x1="664" y1="230" x2="736" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrowKo)"/>
+
+  <rect x="740" y="190" width="170" height="80" rx="8" fill="#4a5568"/>
+  <text x="825" y="220" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="13" font-weight="600" fill="#ffffff">인터넷</text>
+  <text x="825" y="241" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#cbd5e0">출구 IP = 인도</text>
+
+  <text x="445" y="302" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#8b949e">핸드셰이크는 INPUT만 지난다 — FORWARD가 막혀도 &#8220;연결됨&#8221;으로 표시되는 이유.</text>
+</svg>

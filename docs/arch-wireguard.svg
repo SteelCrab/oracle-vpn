@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" width="920" height="320" role="img" aria-label="WireGuard data path: devices on the 10.66.0.0/24 tunnel subnet connect over encrypted UDP port 51820 to the Oracle Cloud VM, where the OCI Security List and the iptables INPUT chain admit the packet and the wg0 interface decrypts it in the kernel. The decrypted packet is then routed, so it must cross the iptables FORWARD chain — the hop that caused the outage in this project — and NAT MASQUERADE before leaving to the internet with an Indian exit IP.">
+  <defs>
+    <marker id="wgArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <!-- server boundary -->
+  <rect x="210" y="40" width="470" height="240" rx="10" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="228" y="28" width="212" height="24" rx="12" fill="#4a5568"/>
+  <text x="334" y="44" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Oracle Cloud VM · ap-mumbai-1</text>
+
+  <!-- client -->
+  <rect x="10" y="92" width="140" height="80" rx="8" fill="#4a5568"/>
+  <text x="80" y="118" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Devices</text>
+  <text x="80" y="137" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#cbd5e0">10.66.0.3 · .4 · .5</text>
+  <text x="80" y="152" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#cbd5e0">tunnel subnet</text>
+
+  <!-- ingress arrow + label -->
+  <line x1="152" y1="132" x2="226" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrow)"/>
+  <rect x="118" y="55" width="140" height="22" rx="11" fill="#4a5568"/>
+  <text x="188" y="70" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#ffffff">encrypted · UDP 51820</text>
+
+  <!-- row 1 -->
+  <rect x="232" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="297" y="126" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">OCI Security List</text>
+  <text x="297" y="145" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#c3d0e8">cloud firewall</text>
+
+  <line x1="364" y1="132" x2="378" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrow)"/>
+
+  <rect x="382" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="447" y="126" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">iptables INPUT</text>
+  <text x="447" y="145" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#c3d0e8">host firewall</text>
+
+  <line x1="514" y1="132" x2="528" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrow)"/>
+
+  <rect x="532" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="597" y="126" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">wg0 decrypt</text>
+  <text x="597" y="145" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#c3d0e8">kernel · 10.66.0.1</text>
+
+  <!-- wrap down to row 2 -->
+  <path d="M 597 166 L 597 182 L 447 182 L 447 196" fill="none" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrow)"/>
+  <text x="522" y="177" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" fill="#8b949e">routed, not terminated</text>
+
+  <!-- row 2 -->
+  <rect x="382" y="198" width="130" height="64" rx="8" fill="#8c3a3a"/>
+  <text x="447" y="224" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">iptables FORWARD</text>
+  <text x="447" y="243" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#f0c8c8">the outage was here</text>
+
+  <line x1="514" y1="230" x2="528" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrow)"/>
+
+  <rect x="532" y="198" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="597" y="224" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">NAT MASQUERADE</text>
+  <text x="597" y="243" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#c3d0e8">rewrite source IP</text>
+
+  <!-- egress -->
+  <line x1="664" y1="230" x2="736" y2="230" stroke="#8b949e" stroke-width="1.5" marker-end="url(#wgArrow)"/>
+
+  <rect x="740" y="190" width="170" height="80" rx="8" fill="#4a5568"/>
+  <text x="825" y="220" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Internet</text>
+  <text x="825" y="241" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#cbd5e0">egress IP = India</text>
+
+  <!-- footnote -->
+  <text x="445" y="302" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#8b949e">The handshake reaches wg0 through INPUT alone — so a blocked FORWARD still reports &#8220;connected&#8221;.</text>
+</svg>

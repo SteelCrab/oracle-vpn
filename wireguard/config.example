@@ -1,0 +1,18 @@
+# Copy to config.local and fill in. config.local is gitignored.
+#
+#   cp config.example config.local
+#
+# Every value can also be supplied as an environment variable of the same name,
+# which takes precedence over this file.
+
+# Public IP or hostname of the WireGuard server
+OVPN_SERVER=203.0.113.10
+
+# SSH login user on that server
+OVPN_SSH_USER=ubuntu
+
+# Path to the SSH private key for that server ( ~ is expanded )
+OVPN_SSH_KEY=~/path/to/ssh-key.key
+
+# Where device configs and QR images are written (defaults to this directory)
+# OVPN_DIR=/absolute/path

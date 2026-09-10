@@ -1,0 +1,29 @@
+# Credentials. A .conf embeds a PrivateKey and a QR image encodes the same
+# config, so both are credentials. ss:// URLs live in config.local territory too.
+*.conf
+*-qr.png
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.conf.*
+*-qr.*
+ss-url.txt*
+shadowsocks/config.json
+
+# Local settings: server address and SSH key path
+config.local
+config.local.*
+.env
+.env.*
+!.env.example
+.oci/
+*.tfstate*
+*.log
+*.bak
+
+__pycache__/
+*.py[cod]
+.DS_Store

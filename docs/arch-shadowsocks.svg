@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" width="920" height="230" role="img" aria-label="Shadowsocks data path: the Outline client connects over encrypted TCP or UDP port 8388 to the Oracle Cloud VM, where the OCI Security List and the iptables INPUT chain admit it and the ssserver userspace proxy terminates it, then opens a separate outbound connection to the internet with an Indian exit IP. It never crosses the FORWARD chain or NAT.">
+  <defs>
+    <marker id="ssArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <!-- server boundary -->
+  <rect x="210" y="40" width="470" height="150" rx="10" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="228" y="28" width="212" height="24" rx="12" fill="#4a5568"/>
+  <text x="334" y="44" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Oracle Cloud VM · ap-mumbai-1</text>
+
+  <!-- client -->
+  <rect x="10" y="92" width="140" height="80" rx="8" fill="#4a5568"/>
+  <text x="80" y="118" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Outline app</text>
+  <text x="80" y="137" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#cbd5e0">iPhone · Android</text>
+  <text x="80" y="152" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#cbd5e0">Mac · Windows</text>
+
+  <!-- ingress arrow + label -->
+  <line x1="152" y1="132" x2="226" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrow)"/>
+  <rect x="112" y="55" width="152" height="22" rx="11" fill="#4a5568"/>
+  <text x="188" y="70" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#ffffff">encrypted · TCP/UDP 8388</text>
+
+  <!-- hop 1 -->
+  <rect x="232" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="297" y="126" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">OCI Security List</text>
+  <text x="297" y="145" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#c3d0e8">cloud firewall</text>
+
+  <line x1="364" y1="132" x2="378" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrow)"/>
+
+  <!-- hop 2 -->
+  <rect x="382" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="447" y="126" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">iptables INPUT</text>
+  <text x="447" y="145" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#c3d0e8">host firewall</text>
+
+  <line x1="514" y1="132" x2="528" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrow)"/>
+
+  <!-- terminator -->
+  <rect x="532" y="100" width="130" height="64" rx="8" fill="#2d7d5a"/>
+  <text x="597" y="126" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff">ssserver</text>
+  <text x="597" y="145" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#bfe3d2">userspace proxy</text>
+
+  <!-- egress arrow + label -->
+  <line x1="664" y1="132" x2="736" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrow)"/>
+  <rect x="628" y="55" width="144" height="22" rx="11" fill="#4a5568"/>
+  <text x="700" y="70" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#ffffff">new TCP connection</text>
+
+  <!-- internet -->
+  <rect x="740" y="92" width="170" height="80" rx="8" fill="#4a5568"/>
+  <text x="825" y="122" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Internet</text>
+  <text x="825" y="143" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#cbd5e0">egress IP = India</text>
+
+  <!-- footnote -->
+  <text x="445" y="212" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#8b949e">No FORWARD chain, no NAT, no tunnel interface — traffic terminates in userspace.</text>
+</svg>

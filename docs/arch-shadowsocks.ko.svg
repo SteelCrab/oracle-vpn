@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" width="920" height="230" role="img" aria-label="Shadowsocks 데이터 경로. Outline 앱이 암호화된 TCP/UDP 8388 포트로 Oracle Cloud VM에 접속하면 OCI Security List와 iptables INPUT을 통과하고, ssserver 유저스페이스 프록시가 연결을 종료한 뒤 인도 출구 IP로 새 연결을 연다. FORWARD 체인과 NAT는 거치지 않는다.">
+  <defs>
+    <marker id="ssArrowKo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <rect x="210" y="40" width="470" height="150" rx="10" fill="none" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="228" y="28" width="212" height="24" rx="12" fill="#4a5568"/>
+  <text x="334" y="44" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Oracle Cloud VM · ap-mumbai-1</text>
+
+  <rect x="10" y="92" width="140" height="80" rx="8" fill="#4a5568"/>
+  <text x="80" y="118" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Outline 앱</text>
+  <text x="80" y="137" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#cbd5e0">iPhone · Android</text>
+  <text x="80" y="152" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#cbd5e0">Mac · Windows</text>
+
+  <line x1="152" y1="132" x2="226" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrowKo)"/>
+  <rect x="118" y="55" width="140" height="22" rx="11" fill="#4a5568"/>
+  <text x="188" y="70" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#ffffff">암호화 · TCP/UDP 8388</text>
+
+  <rect x="232" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="297" y="126" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">OCI Security List</text>
+  <text x="297" y="145" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#c3d0e8">클라우드 방화벽</text>
+
+  <line x1="364" y1="132" x2="378" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrowKo)"/>
+
+  <rect x="382" y="100" width="130" height="64" rx="8" fill="#3a5a8c"/>
+  <text x="447" y="126" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">iptables INPUT</text>
+  <text x="447" y="145" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#c3d0e8">서버 방화벽</text>
+
+  <line x1="514" y1="132" x2="528" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrowKo)"/>
+
+  <rect x="532" y="100" width="130" height="64" rx="8" fill="#2d7d5a"/>
+  <text x="597" y="126" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="12" font-weight="600" fill="#ffffff">ssserver</text>
+  <text x="597" y="145" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#bfe3d2">유저스페이스 프록시</text>
+
+  <line x1="664" y1="132" x2="736" y2="132" stroke="#8b949e" stroke-width="1.5" marker-end="url(#ssArrowKo)"/>
+  <rect x="646" y="55" width="108" height="22" rx="11" fill="#4a5568"/>
+  <text x="700" y="70" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#ffffff">새 TCP 연결</text>
+
+  <rect x="740" y="92" width="170" height="80" rx="8" fill="#4a5568"/>
+  <text x="825" y="122" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="13" font-weight="600" fill="#ffffff">인터넷</text>
+  <text x="825" y="143" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#cbd5e0">출구 IP = 인도</text>
+
+  <text x="445" y="212" text-anchor="middle" font-family="Apple SD Gothic Neo, Malgun Gothic, Noto Sans KR, ui-sans-serif, sans-serif" font-size="11" fill="#8b949e">FORWARD 체인도 NAT도 터널 인터페이스도 없다 — 트래픽이 유저스페이스에서 종료된다.</text>
+</svg>
