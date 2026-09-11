@@ -121,7 +121,7 @@ Unlike Shadowsocks, WireGuard is driven from **your** machine. Do this once.
 | Package | For | Required |
 |---|---|---|
 | `wireguard-tools` | generating keys, connecting from this machine | yes |
-| `qrencode` | QR codes as PNG files | optional — terminal QR still works |
+| `qrencode` | Terminal QR and PNG generation | required for QR — otherwise import the `.conf` file |
 | Python 3.9+ | `vpnctl.py`, standard library only | yes — preinstalled on macOS and in WSL |
 
 Point the CLI at your server:
@@ -213,6 +213,17 @@ $ ./vpnctl.py list
 Private keys are generated **locally** and never sent to the server — only public
 keys are registered. Tunnel subnet is `10.66.0.0/24`; the server holds `.1`,
 clients get the lowest free address from `.2`.
+
+QR generation is local only. Without local `qrencode`, import the config file
+into the app. The legacy server-side `add-vpn-peer.sh` installed by the setup
+script stores private keys on the server; use this guide's `vpnctl.py` for
+local key management.
+
+Internet access is IPv4-only. Client `AllowedIPs = 0.0.0.0/0, ::/0` also
+captures IPv6, which the server's IPv4-only peer policy drops. This prevents
+IPv6 bypass while the tunnel is up, but is not a tunnel-down kill switch.
+For existing configs, update `AllowedIPs` under `[Peer]` to that value and
+reconnect. Regenerate QR codes with `vpnctl.py qr <name>` after editing.
 
 ---
 

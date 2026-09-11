@@ -107,8 +107,10 @@ then `wg0` re-encrypts. So FORWARD must allow both directions —
 `-i wg0` outbound and `-o wg0` on the way back.
 
 Each peer is pinned to `AllowedIPs = 10.66.0.X/32` on the server, so a device can
-only ever use its own address. Clients set `0.0.0.0/0`, sending everything
-through the tunnel.
+only ever use its own address. Clients set `0.0.0.0/0, ::/0` to capture both
+IPv4 and IPv6. Internet access is IPv4-only: the server's IPv4-only peer
+policy drops IPv6 instead of letting it bypass the tunnel. This is not a
+kill switch when the tunnel is down.
 
 Confirm the table above on a running server:
 

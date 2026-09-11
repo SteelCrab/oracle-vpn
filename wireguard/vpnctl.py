@@ -230,17 +230,9 @@ def local_conf(name: str) -> Path:
 # ---------------------------------------------------------------- QR
 
 def qr_terminal(conf_path: Path) -> bool:
-    """Print a QR code. Prefers local qrencode, falls back to the server's."""
+    """Render locally only: the config contains the client's private key."""
     if have("qrencode"):
         sys.stdout.write(run(["qrencode", "-t", "ansiutf8", "-r", str(conf_path)]))
-        return True
-    out = ssh(
-        f"command -v qrencode >/dev/null && qrencode -t ansiutf8 -r /dev/stdin "
-        f"<<'EOF_CONF'\n{conf_path.read_text()}\nEOF_CONF",
-        check=False,
-    )
-    if out.strip():
-        sys.stdout.write(out)
         return True
     return False
 
@@ -292,7 +284,9 @@ def cmd_add(args):
         f"[Peer]\n"
         f"PublicKey = {srv_pub}\n"
         f"Endpoint = {SERVER}:{PORT}\n"
-        f"AllowedIPs = 0.0.0.0/0\n"
+        # Capture IPv6 too. The server peer permits IPv4 sources only,
+        # so IPv6 is dropped rather than bypassing the VPN.
+        f"AllowedIPs = 0.0.0.0/0, ::/0\n"
         f"PersistentKeepalive = 25\n"
     )
     OUT_DIR.mkdir(parents=True, exist_ok=True)

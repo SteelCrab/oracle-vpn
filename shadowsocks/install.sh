@@ -33,6 +33,13 @@ case "$(uname -m)" in
   *) echo "unsupported architecture: $(uname -m)" >&2; exit 1 ;;
 esac
 
+export DEBIAN_FRONTEND=noninteractive
+echo 'iptables-persistent iptables-persistent/autosave_v4 boolean true' | debconf-set-selections
+echo 'iptables-persistent iptables-persistent/autosave_v6 boolean true' | debconf-set-selections
+apt-get update
+apt-get install -y curl ca-certificates xz-utils iptables-persistent
+systemctl enable netfilter-persistent
+
 echo "==> downloading shadowsocks-rust $VERSION ($ARCH)"
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
@@ -87,13 +94,16 @@ WantedBy=multi-user.target
 UNIT
 
 systemctl daemon-reload
-systemctl enable --now shadowsocks
+systemctl enable shadowsocks
+# A rerun rotates the key; enable --now would leave an active process
+# serving the old configuration and accepting the revoked key.
+systemctl restart shadowsocks
 
 echo "==> opening the host firewall"
 # Insert before Oracle's default REJECT rule, which sits in INPUT.
 iptables -I INPUT 1 -p tcp --dport "$PORT" -j ACCEPT
 iptables -I INPUT 2 -p udp --dport "$PORT" -j ACCEPT
-netfilter-persistent save >/dev/null 2>&1 || true
+netfilter-persistent save
 
 sleep 1
 systemctl is-active --quiet shadowsocks && echo "service: running" || {

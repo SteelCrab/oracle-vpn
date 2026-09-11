@@ -78,7 +78,8 @@ MTU = 1280
 [Peer]
 PublicKey = $SERVER_PUB
 Endpoint = $ENDPOINT
-AllowedIPs = 0.0.0.0/0
+# Capture IPv6; the server's IPv4-only peer AllowedIPs rejects it.
+AllowedIPs = 0.0.0.0/0, ::/0
 PersistentKeepalive = 25
 CONF
 
